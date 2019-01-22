@@ -15,7 +15,7 @@
 /* eslint-disable */
 export default {
   name: "Header"
-};
+}
 </script>
 <style lang='stylus' scoped>
 @import '~styles/varibles.styl';
