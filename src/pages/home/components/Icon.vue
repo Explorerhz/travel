@@ -4,7 +4,7 @@
       <swiper-slide v-for="(page, index) in pages" :key="index">
         <div class="icon" v-for="item in page" :key="item.id">
           <div class="icon-img">
-            <img class="icon-img-content" :src="item.img" alt="">
+            <img class="icon-img-content" :src="item.imgUrl" alt="">
           </div>
           <p class="icon-desc">{{item.desc}}</p>
         </div>
@@ -18,58 +18,16 @@ export default {
   data () {
     return {
       swiperOption: {
-      },
-      imgList: [
-        {
-          id: '001',
-          img: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc: '热门景点'
-        },
-        {
-          id: '002',
-          img: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-          desc: '热门景点'
-        },
-        {
-          id: '003',
-          img: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-          desc: '热门景点'
-        }, {
-          id: '004',
-          img: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc: '热门景点'
-        },
-        {
-          id: '005',
-          img: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-          desc: '热门景点'
-        },
-        {
-          id: '006',
-          img: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-          desc: '热门景点'
-        }, {
-          id: '007',
-          img: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png',
-          desc: '热门景点'
-        },
-        {
-          id: '008',
-          img: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-          desc: '热门景点'
-        },
-        {
-          id: '009',
-          img: 'http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png',
-          desc: '热门景点'
-        }
-      ]
+      }
     }
+  },
+  props: {
+    iconList: Array
   },
   computed: {
     pages () {
       const pages = []
-      this.imgList.forEach((item, index) => {
+      this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

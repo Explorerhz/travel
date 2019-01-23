@@ -6,15 +6,17 @@
     <div class="header-input">
       <span class="iconfont">&#xe632;</span>
       请输入城市/景点等名称</div>
-    <div class="header-right">城市
+    <div class="header-right">{{ this.city }}
       <span class="iconfont">&#xe627;</span>
     </div>
   </div>
 </template>
 <script>
-/* eslint-disable */
 export default {
-  name: "Header"
+  name: 'Header',
+  props: {
+    city: String
+  }
 }
 </script>
 <style lang='stylus' scoped>
