@@ -6,9 +6,12 @@
     <div class="header-input">
       <span class="iconfont">&#xe632;</span>
       请输入城市/景点等名称</div>
-    <div class="header-right">{{ this.city }}
-      <span class="iconfont">&#xe627;</span>
-    </div>
+      <router-link to="/city">
+        <div class="header-right">
+            {{ this.city }}
+            <span class="iconfont">&#xe627;</span>
+        </div>
+      </router-link>
   </div>
 </template>
 <script>
@@ -49,6 +52,7 @@ export default {
   .header-right {
     float: right;
     width: 1.24rem;
+    color: #ffffff
   }
 }
 </style>
